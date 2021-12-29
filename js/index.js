@@ -7,7 +7,7 @@ let player;
 let pipes;
 let animation;
 let gameState = 0;
-let temp = localStorage.getItem("flappy-highScore");
+let temp = localStorage.getItem('flappy-highScore');
 let sound;
 
 if (temp) {
@@ -17,26 +17,26 @@ if (temp) {
 }
 highScoreDiv.innerHTML = `High Score: ${highScore}`;
 
-startBnt.addEventListener("click", function() {
+startBnt.addEventListener('click', function() {
     gameState = 1;
-    gameStart.style.display = "none";
-    hints.style.display = "none";
+    gameStart.style.display = 'none';
+    hints.style.display = 'none';
     setup();
 });
 
 //setups the whole game
 function setup() {
-    canvas.setAttribute("width", width);
-    canvas.setAttribute("height", height);
+    canvas.setAttribute('width', width);
+    canvas.setAttribute('height', height);
     bgImage = new Image();
-    bgImage.src = "./images/background.png";
+    bgImage.src = './images/background.png';
     deck = new Deck();
     point = 0;
     frameCount = 0;
     pipes = [];
-    scoreboard.style.display = "block";
+    scoreboard.style.display = 'block';
     scoreboard.innerHTML = `${point}`;
-    canvas.style.display = "block";
+    canvas.style.display = 'block';
     player = new Player();
     pipes.push(new Pipe());
     loop();
@@ -44,7 +44,7 @@ function setup() {
 
 //draws all the components on the canvas
 function draw() {
-    context.fillStyle = "white";
+    context.fillStyle = 'rgb(112,197,206)';
     context.fillRect(0, 0, width, height);
 
     //drawing background image
@@ -112,41 +112,42 @@ function loop() {
 
 //the first function to run
 function start() {
-    canvas.style.display = "hidden";
+    canvas.style.display = 'hidden';
 }
 
 //runs after the game is over
 function gameOver() {
     window.cancelAnimationFrame(animation);
-    gameover.style.display = "block";
-    restartBtn.style.display = "block";
-    scoreboard.style.display = "none";
+    gameover.style.display = 'block';
+    restartBtn.style.display = 'block';
+    scoreboard.style.display = 'none';
     finalScore.innerHTML = `Your Score: ${point}`;
-    canvas.style.display = "none";
+    canvas.style.display = 'none';
     sound = new Audio('./sounds/sfx_die.wav');
+    sound.play();
 
     //setting the highscore on the localstorage
     if (point > highScore) {
         highScore = point;
-        localStorage.setItem("flappy-highScore", point);
+        localStorage.setItem('flappy-highScore', point);
     } else {
-        localStorage.setItem("flappy-highScore", highScore);
+        localStorage.setItem('flappy-highScore', highScore);
     }
 
     currentHS.innerHTML = `High Score: ${highScore}`;
 }
 
 //adding restart functionality to the restart button
-restartBtn.addEventListener("click", function() {
+restartBtn.addEventListener('click', function() {
     gameState = 1;
-    gameover.style.display = "none";
+    gameover.style.display = 'none';
     setup();
 });
 
 //listening for space Bar press to jump
-window.addEventListener("keypress", function(e) {
+window.addEventListener('keypress', function(e) {
 
-    if (e.key === " ") {
+    if (e.key === ' ') {
         player.jump();
     }
 });

@@ -44,7 +44,7 @@ function Pipe() {
             return false;
         }
 
-        if (this.x < player.x) {
+        if (this.x + this.width / 2 < player.x) {
             this.crossed = true;
             return true;
         }
@@ -56,7 +56,7 @@ function Pipe() {
      */
     this.edge = function() {
 
-        if (this.x < 0) {
+        if (this.x + this.width / 2 < 0) {
             return true;
         }
         return false;
