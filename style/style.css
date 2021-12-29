@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Mulish:wght@200&family=Press+Start+2P&family=Source+Sans+3:wght@300&display=swap');
-*{
+* {
     font-family: 'Press Start 2P', cursive;
 }
-body{
+
+body {
     background-color: rgb(218, 218, 218);
 }
-#container{
+
+#container {
     position: relative;
     margin: 0 auto;
 }
-#gameStart{
+
+#gameStart {
     width: 50%;
     display: block;
     background-color: white;
@@ -23,11 +26,13 @@ body{
     filter: drop-shadow(16px 20px 14px #7c7c7c);
     padding: 2.5%;
 }
-#gameStart div{
+
+#gameStart div {
     margin-top: 5%;
     margin-bottom: 5%;
 }
-#start{
+
+#start {
     display: block;
     border-radius: 25px;
     margin: 0 auto;
@@ -35,17 +40,19 @@ body{
     margin-bottom: 20px;
     font-size: 20px;
     width: 60%;
-    padding-top:2.5%;
+    padding-top: 2.5%;
     padding-bottom: 2.5%;
     background-color: rgb(138, 137, 136);
 }
-#viewPort{
-    border:1px solid black;
+
+#viewPort {
+    border: 1px solid black;
     display: none;
     margin: 0 auto;
     z-index: 0;
 }
-#scoreboard{
+
+#scoreboard {
     width: 100%;
     display: none;
     position: absolute;
@@ -57,7 +64,8 @@ body{
     z-index: 5;
     padding-top: 2%;
 }
-#gameOver{
+
+#gameOver {
     width: 50%;
     display: none;
     background-color: white;
@@ -71,11 +79,13 @@ body{
     filter: drop-shadow(16px 20px 14px #7c7c7c);
     padding: 2.5%;
 }
-#gameOver div{
+
+#gameOver div {
     margin-top: 5%;
     margin-bottom: 5%;
 }
-#restart{
+
+#restart {
     display: block;
     border-radius: 25px;
     margin: 0 auto;
@@ -83,18 +93,21 @@ body{
     margin-bottom: 20px;
     font-size: 20px;
     width: 60%;
-    padding-top:2.5%;
+    padding-top: 2.5%;
     padding-bottom: 2.5%;
     background-color: rgb(138, 137, 136);
 }
-#restart:hover,#start:hover{
+
+#restart:hover,
+#start:hover {
     background-color: rgb(18, 97, 216);
     color: white;
     cursor: pointer;
 }
-#hints{
+
+#hints {
     width: 50%;
     margin: auto;
-    margin-top:5%;
+    margin-top: 5%;
     text-align: center;
 }
