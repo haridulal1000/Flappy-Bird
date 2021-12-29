@@ -5,7 +5,8 @@ function Deck() {
     this.x = 0;
     this.y = deckHeight;
     this.image = new Image();
-    this.image.src = './images/deck.png';
+    this.image.src = './assets/images/deck.png';
+
     //draws infinite loop of the deck image
     this.moveDeck = function() {
         this.x = (this.x + pipeSpeed) % (this.width / 2);

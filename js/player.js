@@ -14,8 +14,8 @@ function Player() {
     for (let i = 0; i < 3; i++) {
         this.imageUpArray.push(new Image());
         this.imageDownArray.push(new Image());
-        this.imageUpArray[i].src = `./images/birds/bu${i+1}.png`;
-        this.imageDownArray[i].src = `./images/birds/bd${i+1}.png`;
+        this.imageUpArray[i].src = `./assets/images/birds/bu${i+1}.png`;
+        this.imageDownArray[i].src = `./assets/images/birds/bd${i+1}.png`;
     }
     //display the player on the screen
     this.show = function() {
@@ -56,7 +56,7 @@ function Player() {
     //adds upward velocity to the player
     this.jump = function() {
             this.yVel = this.jumpHeight;
-            sound = new Audio('./sounds/sfx_flap.wav');
+            sound = new Audio('./assets/sounds/sfx_flap.wav');
             sound.play();
         }
         /**

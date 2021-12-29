@@ -1,8 +1,8 @@
 function Pipe() {
     this.imageUpper = new Image();
-    this.imageUpper.src = './images/pipe-upper.png';
+    this.imageUpper.src = './assets/images/pipe-upper.png';
     this.imageLower = new Image();
-    this.imageLower.src = './images/pipe-lower.png';
+    this.imageLower.src = './assets/images/pipe-lower.png';
     this.passage = 150;
     this.xVel = pipeSpeed;
     this.yVel = 0;

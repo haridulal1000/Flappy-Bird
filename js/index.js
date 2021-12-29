@@ -9,6 +9,12 @@ let animation;
 let gameState = 0;
 let temp = localStorage.getItem('flappy-highScore');
 let sound;
+let logoCount = 0;
+let initialAnimation = setInterval(function() {
+    logo.src = `./assets/images/birds/bird-${logoCount+1}.png`;
+    logoCount++;
+    logoCount %= 3;
+}, 500);
 
 if (temp) {
     highScore = temp;
@@ -21,6 +27,7 @@ startBnt.addEventListener('click', function() {
     gameState = 1;
     gameStart.style.display = 'none';
     hints.style.display = 'none';
+    clearInterval(initialAnimation);
     setup();
 });
 
@@ -29,7 +36,7 @@ function setup() {
     canvas.setAttribute('width', width);
     canvas.setAttribute('height', height);
     bgImage = new Image();
-    bgImage.src = './images/background.png';
+    bgImage.src = './assets/images/background.png';
     deck = new Deck();
     point = 0;
     frameCount = 0;
@@ -76,7 +83,7 @@ function draw() {
         if (pipes[i].pointUp(player)) {
             point++;
             scoreboard.innerHTML = `${point}`;
-            sound = new Audio('./sounds/sfx_point.wav');
+            sound = new Audio('./assets/sounds/sfx_point.wav');
             sound.play();
         }
     }
@@ -110,10 +117,7 @@ function loop() {
     animation = window.requestAnimationFrame(draw);
 }
 
-//the first function to run
-function start() {
-    canvas.style.display = 'hidden';
-}
+
 
 //runs after the game is over
 function gameOver() {
@@ -123,7 +127,7 @@ function gameOver() {
     scoreboard.style.display = 'none';
     finalScore.innerHTML = `Your Score: ${point}`;
     canvas.style.display = 'none';
-    sound = new Audio('./sounds/sfx_die.wav');
+    sound = new Audio('./assets/sounds/sfx_die.wav');
     sound.play();
 
     //setting the highscore on the localstorage
