@@ -151,7 +151,7 @@ restartBtn.addEventListener('click', function() {
 //listening for space Bar press to jump
 window.addEventListener('keypress', function(e) {
 
-    if (e.key === ' ') {
+    if (e.key === ' ' && gameState === 1) {
         player.jump();
     }
 });
